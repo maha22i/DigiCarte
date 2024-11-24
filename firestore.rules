@@ -1,0 +1,36 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Fonction helper pour vérifier si l'utilisateur est authentifié
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Fonction helper pour vérifier si l'utilisateur accède à ses propres données
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Règles pour la collection users
+    match /users/{userId} {
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+
+    // Règles pour la collection businessCards
+    match /businessCards/{cardId} {
+      // Permettre la lecture publique pour le partage des cartes
+      allow read: if true;
+      
+      // Permettre la création si l'utilisateur est authentifié et que userId correspond
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      
+      // Permettre la modification et la suppression uniquement au propriétaire
+      allow update, delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+  }
+}

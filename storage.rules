@@ -1,0 +1,29 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Fonction helper pour vérifier si l'utilisateur est authentifié
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Fonction helper pour vérifier la taille du fichier (max 2MB)
+    function isValidSize() {
+      return request.resource.size <= 2 * 1024 * 1024;
+    }
+    
+    // Fonction helper pour vérifier le type de fichier
+    function isValidType() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    // Règles pour les photos de profil
+    match /profile-photos/{userId}/{fileName} {
+      allow read: if true; // Tout le monde peut voir les photos
+      allow create: if isAuthenticated() 
+                   && request.auth.uid == userId 
+                   && isValidSize() 
+                   && isValidType();
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+  }
+}
