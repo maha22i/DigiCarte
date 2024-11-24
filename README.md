@@ -57,7 +57,7 @@ L'application sera accessible sur http://localhost:3000.
 
 ## Contactez-nous
 
-Mohamed Chehem Mohamed
-Email : chehem21@gmail.com
-Téléphone : +33 07 75 84 09 62
+- Mohamed Chehem Mohamed
+- Email : chehem21@gmail.com
+- Téléphone : +33 07 75 84 09 62
 
