@@ -3,7 +3,7 @@
 Simplifiez vos cartes de visite avec notre solution digitale innovante.
 
 ![Aperçu 1](https://drive.google.com/uc?id=1qjEeiVFIjGUHZGMHyeXBaOphfN2JVUrJ)  
-![Aperçu 2](https://drive.google.com/uc?id=19F-X8lRdXzn76s3zmqcxXgH8sPDArgWo)
+https://drive.google.com/uc?id=19F-X8lRdXzn76s3zmqcxXgH8sPDArgWo
 
 ---
 
