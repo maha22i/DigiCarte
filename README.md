@@ -2,8 +2,10 @@
 
 Simplifiez vos cartes de visite avec notre solution digitale innovante.
 
-![Aperçu 1](https://drive.google.com/uc?id=1qjEeiVFIjGUHZGMHyeXBaOphfN2JVUrJ)  
-https://drive.google.com/uc?id=19F-X8lRdXzn76s3zmqcxXgH8sPDArgWo
+![image](https://github.com/user-attachments/assets/ecad0efc-8dff-42fa-95c0-720077cb5594)
+ 
+![d1](https://github.com/user-attachments/assets/ee9beb5a-a4ec-48a7-8766-4f708a883b5a)
+
 
 ---
 
@@ -35,18 +37,26 @@ DigiCarte est une application web qui permet de créer et partager des cartes de
 
 Clonez le repository :
 
-```bash
-git clone https://github.com/[votre-username]/DigiCarte.git
-cd DigiCarte
+ ```bash git clone https://github.com/[votre-username]/DigiCarte.git```
+  ```bash cd DigiCarte``` 
+
+---
 
 ## Installez les dépendances :
-  npm install
+
+  ```bash npm install```
+
+---
 
 ## Lancez le serveur de développement :
-npm start
+
+ ```bash npm start ```
 L'application sera accessible sur http://localhost:3000.
 
+---
+
 ## Contactez-nous
+
 Mohamed Chehem Mohamed
 Email : chehem21@gmail.com
 Téléphone : +33 07 75 84 09 62
